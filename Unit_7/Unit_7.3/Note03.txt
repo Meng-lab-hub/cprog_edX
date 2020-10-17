@@ -1,0 +1,54 @@
+Passing argument to a c-code: 
+	int main(int argc, char **argv) or int main(int argc, char *argv[]) or int main (int argc, char argv[][])
+
+/*------------------------------------------------------------------*/
+
+Read information from a file:
+
+Structure of FILE
+
+#include <stdio.h>
+
+int main(void) {
+    FILE *ifile;  
+    ifile = fopen("text.txt", "r"); 
+    fscanf(ifile, "%d", &N); 
+
+    fclose(ifile); 
+    return 0;
+}	
+
+/*-----------------------------------------------------------------------*/
+
+
+
+write to a file
+
+
+#include <stdio.h>
+
+int main(void) {
+	int N;
+	FILE *ofile;   /* ofile is a variable name (output file), we call this a file pointer */
+	
+	ofile = fopen("my_grade.txt", "w");   /* open file for reading,
+						r stand for reading */
+						w stand for writing
+						a statnd for add on
+
+	
+	
+	fprintf(ofile, "%d", number);
+	
+	fclose(ofile);    /* close the file */
+	
+	return 0;
+}
+ 
+
+//-------------------------------------
+
+in case we want to be asked whether will create a new file or add on an old file
+
+	+ trick is to open the file and read first even we don't want to
+	  if it is able to read therefore that file is exist

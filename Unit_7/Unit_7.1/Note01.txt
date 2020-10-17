@@ -1,0 +1,32 @@
++ double is 64-bits float data type
+
++ function declaration and function defination
+
+
+        - function declaration: no need to give a variable to the argument
+          i.e 
+           /*  
+                double square(double); 
+           */
+
+	- function defination: is the prototype of a function which includes telling the compiler what the return type of the function is, what is the type of the argument 
+	  i.e 
+            /*  
+		double square(double x){
+		return x*x;
+		}
+	    *
+
+
++ we can add declaraton by add a header. i.e #include <math.h>
++ we can add defination by add absolute path of the libary to the build cmd: gcc -std=c11 -Wall -fmax-errors=10 -Wextra program.c usr/lib/libm.a -o program.c
+  or gcc -std=c11 -Wall -fmax-errors=10 -Wextra program.c -lm -o program.c (relative path)
+
+
++ we can compile a code from different sourcses by add the executable file to a build cmd:
+	gcc -std=c11 -Wall -fmax-errors=10 -Wextra program.c vizplus.c -ljpeg -o vizplus program
+	
+	- program.c and vizplus.c are a sources for the code
+	- program and vizplus are the executable program
+	- the order of the build command is: "executable program" "header file" -o "source file
+

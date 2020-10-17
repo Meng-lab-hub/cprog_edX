@@ -1,0 +1,1 @@
+Usually we cannot modify the value of global variable in the function, we need to use pointer instead.

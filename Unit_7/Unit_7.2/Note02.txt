@@ -1,0 +1,75 @@
+build cmd: gcc -std=c11 -Wall -fmax-errors=10 -Wextra -o program program.c
+	or gcc program.c -o program
+	or gcc -o program program.o whetherstats.o
+creating object file (computer language fiel): gcc -c -o program.o program.c
+
+	+ gcc is: 
+	+ -std=c11 is: choose a standard of c compiler
+	+ -Wall is: show all warning
+	+ -fmax-errors=10 is: stop compiling if errors is more than 10
+	+ -Wextra is: show extra warning
+	+ -o is: output
+	+ -c is: create a object file 
+
+we can create multiple executable file!
+
+//--------------------------------------------------------------------
+
+Makefile
+target (what is to be produced): what is needed to do so
+	how to produce
+
+ex:
+
+program: program.o weatherstats.o
+	gcc -std=c11 -Wall -fmax-errors=10 -Wextra -o program program.o weatherstats.o
+
+program.o: program.c weatherstats.h
+	gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c -o program.o program.c
+
+weatherstats.o: weatherstats.c
+	gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c -o weatherstats.o weatherstats.c
+
+clean:
+	rm -f weatherstats.o program.o program
+
+lanch: program
+	./program   /* here we can add a new target for makefile to run our program */
+
+
+/*we can call make program to create a program
+ or we can run make clean to delete the program that we mentioned in clean 
+*/
+
+
+
+//---------------------------------------------------------------------------
+
+
+creating a libary for object file:
+	ar rcs libweather.a wheatherstats.o
+
+
+
+compile a program using libary:
+	gcc -o program program.o libweather.a
+	or gcc -o program program.o -L. -lweather
+//---------------------------------------------------------------------------
+
+create makefile using with static libary
+
+program program: program.o
+	gcc -std=c11 -Wall -fmax-errors=10 -Wextra program.o -L. -lweather -o program
+	
+program.o: program.c
+	gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c program.c -o program.o
+	
+launch: program
+	./program
+
+clean:
+	rm -f weatherstats.o program.o program
+
+
+//------------------------------------------------------------------------
+

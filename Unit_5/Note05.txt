@@ -1,0 +1,5 @@
+- to print 02 from the input 2 we can use "%.2d" in type int.
+- using pointer with structure:
+	dereference: (* name).variable, &(* name).variable.
+	can be substitude like this: name->variable, &name->variable
+

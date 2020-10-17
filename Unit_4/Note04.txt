@@ -1,0 +1,1 @@
+pointer always hold 4 bytes of memory regardless any data type.

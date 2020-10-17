@@ -1,0 +1,33 @@
+
+nano file.txt
+here is a text file
+with a second line
+cat file.txt
+echo "hello world"
+echo "hello world" > file2.txt
+cat file2.txt
+cat file2.txt > file3.txt
+cat file3.txt
+cat > anotherfile.txt
+this is anotherfile
+with a new second also (CTRL + D twice!)
+cat anotherfile.txt
+cat /etc/services
+cat /etc/services > listOfServices.txt
+nano listOfServices.txt
+cat /etc/services | more
+cat /etc/services | less    (navigating: space bar, arrows or j,k, G, g)
+more anotherfile.txt
+less anotherfile.txt
+ls /usr/bin
+ls /usr/bin | less
+searching: Forward Search
+/ – search for a pattern which will take you to the next occurrence.
+n – for next match in forward
+N – for previous match in backward
+Backward Search
+? – search for a pattern which will take you to the previous occurrence.
+n – for next match in backward direction
+N – for previous match in forward direction
+less --help  (see N and M options)
+ls /usr/bin | less -NM
